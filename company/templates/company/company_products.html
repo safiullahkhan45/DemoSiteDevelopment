@@ -1,0 +1,98 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+
+	<style type="text/css">
+
+		.fuel-tank-level {
+			width: 130px;
+			height: 130px;
+			border: 2px solid #E5E5E5;
+			border-radius: 50%;
+		}
+
+		.citywise-tank-level {
+			width: 65px;
+			height: 65px;
+			border-radius: 50%;
+		}
+	</style>
+
+	<div id="sub-main-content-diagnostics">
+		
+		<div class="content-box">
+			
+			<div class="content-box-header">
+				<h3>{{ company }} - Products</h3>
+				<div class="clear"></div>
+			</div>
+
+			<div class="content-box-content">
+				
+				<div class="tab-content default-tab"> 
+				
+					<div id="sub-container-site-details-div">
+
+						<!-- Fuel Tanks Details -->
+
+						<div class="">
+							<div class="container-fluid">
+								<div class="fuel-tank border-bottom mb-4">
+
+									{% for object in obj %}
+										<div class="column-3 border-right border-left">
+											{% if object.level < 15 %}
+												<h4 class="text-center">{{ object.label }} <img src="{% static 'dashboard/resources/images/icons/exclamation.png' %}" alt="Low"></h4>
+											{% else %}
+												<h4 class="text-center">{{ object.label }}</h4>
+											{% endif %}
+											<div class="column-left">
+												{% if object.label == 'HSD' %}
+													<div class="fuel-tank-level" style="background: linear-gradient(to top, red {{ object.level }}%, white {{ object.level }}%);">
+												{% elif object.label == 'PMG' %}
+													<div class="fuel-tank-level border" style="background: linear-gradient(to top, yellow {{ object.level }}%, white {{ object.level }}%);">
+												{% elif object.label == 'HOBC' %}
+													<div class="fuel-tank-level border" style="background: linear-gradient(to top, pink {{ object.level }}%, white {{ object.level }}%);">
+												{% endif %}
+												</div>
+											</div>
+											<div class="column-right">
+												<table>
+													<tbody>
+														<div>
+															<tr>Area: {{ object.area }}</tr>
+														</div>
+														<div>
+															<tr>Branch: {{ object.branch }}</tr>
+														</div>
+														<div>
+															<tr>Level: {{ object.level }} %</tr>
+														</div>
+													</tbody>
+												</table>
+												<div class="">
+													<div class="">
+														<a href="#">
+															<button class="button">View</button>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									{% endfor %}
+								</div>	
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+	</div>
+
+{% endblock %}

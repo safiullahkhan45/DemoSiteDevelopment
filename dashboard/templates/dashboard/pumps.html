@@ -1,0 +1,324 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+
+	<div id="sub-main-content-pumps">
+				
+		<div class="clear"></div> 
+
+		<div class="content-box">
+			
+
+			<div class="content-box-header">
+				<h3>Pumps</h3>
+			</div>
+
+			<div class="content-box-content">
+				<div class="tab-content default-tab"> 
+					
+					<table>
+
+						<thead>
+							<tr>
+
+							   <th>Pump</th>
+							   <th>Status</th>
+							   <th>Nozzle</th>
+							   <th>Price</th>
+							   <th>Liters</th>
+							   <th>Amount</th>
+
+							</tr>
+							
+						</thead>
+					 
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>OFFLINE</td>
+								<td>0</td>
+								<td>0.0</td>
+								<td>0</td>
+								<td>0.000</td>
+
+							</tr>
+							
+							<tr>
+								<td>2</td>
+								<td>OFFLINE</td>
+								<td>0</td>
+								<td>0.0</td>
+								<td>0</td>
+								<td>0.000</td>
+
+
+							</tr>
+							
+							<tr>
+								<td>3</td>
+								<td>OFFLINE</td>
+								<td>0</td>
+								<td>0.0</td>
+								<td>0</td>
+								<td>0.000</td>
+
+
+							</tr>
+							
+							<tr>
+								<td>4</td>
+								<td>OFFLINE</td>
+								<td>0</td>
+								<td>0.0</td>
+								<td>0</td>
+								<td>0.000</td>
+
+
+							</tr>
+							
+							<tr>
+								<td>5</td>
+								<td>OFFLINE</td>
+								<td>0</td>
+								<td>0.0</td>
+								<td>0</td>
+								<td>0.000</td>
+
+
+							</tr>
+							
+							
+						</tbody>
+					</table>
+
+					<div id="PumpActionButtons">
+						<div>
+							<label>Pumps</label >              
+							<select name="dropdown" id="dropdown-style">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select> 
+						</div>
+						<div >
+							<label>Preset type</label>              
+							<select name="dropdown" id="dropdown-style">
+								<option value="option1">Volume</option>
+								<option value="option2">Amount</option>
+								<option value="option3">Full tank</option>
+							</select>
+					 	</div>  
+						<div>
+							<label>Preset dose</label>              
+							<input type="text" id="dropdown-style"/> 
+						</div>
+					</div>
+
+					<div>
+						
+						<div class="column-left">
+							<div class="row">
+							 
+							 	<div class="column">
+								    <input type="radio"  style="height: 100%" name="nozzles-radio"/>
+							  	</div>
+					  			<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only" value="Nozzle 1" />
+									
+							  	</div>
+							  	<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only" />
+									
+							  	</div>
+					  			<div class="column" style="width:60%">
+								    <input type="text" id="input-style-only" />
+							  	</div>
+							</div>
+							<div class="row">
+							 
+							 	<div class="column">
+								    <input type="radio" style="height: 100%" name="nozzles-radio"/>
+							  	</div>
+					  			<div class="column" style="width:15%">
+								    <input type="text" value="Nozzle 2"  id="input-style-only"/>
+									
+							  	</div>
+							  	<div class="column" style="width:15%">
+								    <input type="text"  id="input-style-only"/>
+									
+							  	</div>
+					  			<div class="column" style="width:60%">
+								    <input type="text"  id="input-style-only"/>
+							  	</div>
+							</div>
+							<div class="row">
+							 
+							 	<div class="column">
+								    <input type="radio" style="height: 100%" name="nozzles-radio"/>
+							  	</div>
+					  			<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only" value="Nozzle 3" />
+									
+							  	</div>
+							  	<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only" />
+									
+							  	</div>
+					  			<div class="column" style="width:60%">
+								    <input type="text" id="input-style-only" />
+							  	</div>
+							</div>
+							<div class="row">
+							 
+							 	<div class="column">
+								    <input type="radio" style="height: 100%" name="nozzles-radio"/>
+							  	</div>
+					  			<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only"value="Nozzle 4" />
+									
+							  	</div>
+							  	<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only" />
+									
+							  	</div>
+					  			<div class="column" style="width:60%">
+								    <input type="text" id="input-style-only" />
+							  	</div>
+							</div>
+							<div class="row">
+							 
+							 	<div class="column">
+								    <input type="radio" style="height: 100%" name="nozzles-radio"/>
+							  	</div>
+					  			<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only" value="Nozzle 5" />
+									
+							  	</div>
+							  	<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only"/>
+									
+							  	</div>
+					  			<div class="column" style="width:60%">
+								    <input type="text" id="input-style-only" />
+							  	</div>
+							</div>
+							<div class="row">
+							 
+							 	<div class="column">
+								    <input type="radio" style="height: 100%" name="nozzles-radio"/>
+							  	</div>
+					  			<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only" value="Nozzle 6" />
+									
+							  	</div>
+							  	<div class="column" style="width:15%">
+								    <input type="text" id="input-style-only" />
+									
+							  	</div>
+					  			<div class="column" style="width:60%">
+								    <input type="text" id="input-style-only" />
+							  	</div>
+							</div>
+						</div>
+
+						
+						<div class="column-right">
+							<div class="row" style="margin-bottom: 5px">
+							 
+							 	<div class="column" style="width:45%">
+								    <input class="button" value="Authorize" id="input-fields-style"/>
+							  	</div>
+					  			<div class="column" style="width:5%">
+									
+							  	</div>
+							  	<div class="column" style="width:45%">
+								   <input class="button" value="Get prices" id="input-fields-style"/>
+									
+							  	</div>
+							</div>
+							<div class="row"  style="margin-bottom: 5px">
+							 
+							 	<div class="column" style="width:45%">
+								    <input class="button" value="Stop" id="input-fields-style"/>
+							  	</div>
+					  			<div class="column" style="width:5%">
+									
+							  	</div>
+							  	<div class="column" style="width:45%">
+								   <input class="button" value="Set prices" id="input-fields-style"/>
+									
+							  	</div>
+							</div>
+							<div class="row"  style="margin-bottom: 5px">
+							 
+							 	<div class="column" style="width:45%">
+								    <input class="button" value="Resume" id="input-fields-style"/>
+							  	</div>
+					  			<div class="column" style="width:5%">
+									
+							  	</div>
+							  	<div class="column" style="width:45%">
+								   <input class="button" value="Get total counters" id="input-fields-style"/>
+									
+							  	</div>
+							</div>
+							<div class="row"  style="margin-bottom: 5px">
+							 
+							 	<div class="column" style="width:45%">
+								    <input class="button" value="Suspend" id="input-fields-style"/>
+							  	</div>
+					  			<div class="column" style="width:5%">
+									
+							  	</div>
+							  	<div class="column" style="width:45%">
+								   <input class="button" value="Get tag ID" id="input-fields-style"/>
+									
+							  	</div>
+							</div>
+							<div class="row"  style="margin-bottom: 5px">
+							 
+							 	<div class="column" style="width:45%">
+								    <input class="button" value="EMERGENCY STOP" id="input-fields-style"/>
+							  	</div>
+					  			<div class="column" style="width:5%">
+									
+							  	</div>
+							  	<div class="column" style="width:45%">
+								   <input class="button" value="Turn lights on" id="input-fields-style"/>
+									
+							  	</div>
+							</div>
+							<div class="row"  style="margin-bottom: 5px">
+							 
+							 	<div class="column" style="width:45%">
+							  	</div>
+					  			<div class="column" style="width:5%;height: 100%">
+									
+							  	</div>
+							  	<div class="column" style="width:45%">
+								   <input class="button" value="Turn lights off" id="input-fields-style"/>
+									
+							  	</div>
+							</div>	
+						</div>
+
+						<div class="clear"></div>
+					</div>
+
+
+				</div> 
+			</div> 	
+		</div> 
+
+		<div class="clear"></div>
+		
+		<div id="footer">
+			<small>
+					&#169; Copyright 2020 Forecourt Automation | Powered by <a href="http://www.ashberry.uk">AshBeryy</a> | <a href="#">Top</a>
+			</small>
+		</div>
+	</div>
+
+{% endblock %}

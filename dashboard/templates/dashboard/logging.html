@@ -1,0 +1,94 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+
+	<div id="sub-main-content-logging">
+						
+		<div class="content-box">
+			<div class="content-box-header">
+				<h3>Logging</h3>
+				<div class="clear"></div>
+			</div>
+
+			<div class="content-box-content">
+				
+				<div class="tab-content default-tab"> 
+					
+					<div id="sub-container-logging-div">
+						
+						<div class="row">
+
+							<div class="column" style="width:10%">
+								
+								<input type="text" id="input-style-only" value="Port" />
+							
+							</div>
+
+							<div class="column" style="width:90%;height:34px">
+								<select name="dropdown" id="input-style-only-white-color">
+									<option value="option1">None</option>
+									<option value="option2">Pump port 1</option>
+									<option value="option3">Pump port 2</option>
+									<option value="option4">Pump port 3</option>
+									<option value="option4">Pump port 4</option>
+									<option value="option4">DISP port</option>
+									<option value="option4">USER port</option>
+									<option value="option4">LOG port</option>
+								</select> 
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="column" style="width:18%">
+								<input type="text" id="input-style-only" value="Date/Time to stop" />
+							</div>
+							<div class="column" style="width:80%">
+								<input type="text" id="input-style-only-white-color" />
+							</div>
+						</div>
+
+						<div class="row">
+							<br>
+							<div class="column" style="width:43%">	
+								<input class="button" value="Get" style="text-align: center;width: 100%;height: 20px" />
+							</div>
+
+							<div class="column" style="width:12%">
+								
+							</div>
+
+							<div class="column" style="width:43%">
+								<input class="button" value="Set" style="text-align: center;width: 100%;height: 20px" />
+							</div>
+						</div>
+
+						<div class="row">
+							<br>
+							<div class="column" style="width:40%">	
+							</div>
+
+							<div class="column" style="width:20%">
+								<label>No logging file found.</label>
+							</div>
+
+							<div class="column" style="width:40%">
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+		<div id="footer">
+			<small>
+					&#169; Copyright 2020 Forecourt Automation | Powered by <a href="http://www.ashberry.uk">AshBeryy</a> | <a href="#">Top</a>
+			</small>
+		</div>
+	</div>
+
+{% endblock %}

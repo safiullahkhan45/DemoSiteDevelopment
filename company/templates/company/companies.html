@@ -1,0 +1,63 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+
+	<div id="sub-main-content-tanks">
+
+		<div class="clear"></div> 
+
+		<div class="content-box">
+			
+
+			<div class="content-box-header">
+				<h3>Companies</h3>
+			</div>
+
+			<div class="content-box-content">						
+				<div class="tab-content default-tab"> 
+					
+					<table>
+
+						<thead>
+							<tr>
+								<th>Sr. #</th>
+							   	<th>ID</th>
+							   	<th>Owner</th>
+							   	<th>Name</th>
+							   	<th>Type</th>
+							   	<th>Number</th>
+							   	<th>Email</th>
+							   	<th>Address</th>
+							</tr>
+							
+						</thead>
+
+						<tbody>
+							{% for object in obj %}
+							<tr>
+								<td>{{ forloop.counter }}</td>
+								<td>{{ object.id }}</td>
+	                        	<td>{{ object.company_owner }}</td>
+                        		<td><a href="{% url 'sites' object.id %}">
+                        			{{ object.company_name }}</a>
+                        		</td>
+	                        	<td>{{ object.business_type }}</td>
+	                        	<td>{{ object.contact_number }}</td>
+	                        	<td>{{ object.email }}</td>
+	                        	<td>{{ object.address }}</td>
+							</tr>
+							{% endfor %}
+							
+						</tbody>
+						
+					</table>
+				</div> 
+			</div> 	
+		</div> 
+
+
+		<div class="clear"></div>
+		
+	</div>
+
+{% endblock %}

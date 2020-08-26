@@ -1,0 +1,244 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+
+	<div id="sub-main-content-reporting">
+		
+		<div class="clear"></div>
+		
+		<div class="content-box">
+			
+			<div class="content-box-header">
+				
+				<h3 id="reporting-header">Reporting-Pump</h3>
+				
+				<ul class="content-box-tabs">
+					<li><a href="#pumps-reporting-div" class="default-tab" onclick="ChangeReportingHeaderToPump()">Pumps</a></li>
+					<li><a href="#tanks-reporting-div" onclick="ChangeReportingHeaderToTank()">Tanks</a></li>
+				</ul>
+				
+				<div class="clear"></div>
+			</div> 
+			
+			<div class="content-box-content">
+
+				<div class="tab-content default-tab"> 
+					
+					<div id="sub-container-reporting-div">
+						
+						<div class="row">
+
+							<div class="column" style="width:10%">
+								
+								<input type="text" id="input-style-only" value="Pump" />
+							
+							</div>
+
+							<div class="column" style="width:90%;height:34px">
+								<select name="dropdown" id="input-style-only-white-color">
+									<option value="option1">All</option>
+									<option value="option2">1</option>
+									<option value="option3">2</option>
+									<option value="option4">3</option>
+								</select> 
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="column" style="width:18%">
+								<input type="text" id="input-style-only" value="Date/Time start" />
+							</div>
+							<div class="column" style="width:80%">
+								<input type="text" id="input-style-only-white-color" />
+							</div>
+						</div>
+						<div class="row">
+
+							<div class="column" style="width:18%">
+								<input type="text" id="input-style-only" value="Date/Time end" />
+
+							</div>
+							<div class="column" style="width:80%">
+								<input type="text" id="input-style-only-white-color" />
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="column" style="width:15%">
+								<input type="text" id="input-style-only" value="Fuel grade" />
+
+							</div>
+							<div class="column" style="width:85%;height:34px">
+								<select name="dropdown" id="input-style-only-white-color">
+								<option value="option1">All</option>
+								<option value="option2">HOBC</option>
+								<option value="option3">HSD</option>
+								<option value="option4">PMG</option>
+								</select> 
+							</div>
+						</div>
+						<div class="row">
+
+							<div class="column" style="width:10%">
+								<input type="text" id="input-style-only" value="User" />
+
+							</div>
+							<div class="column" style="width:90%;height:34px">
+								<select name="dropdown"  id="input-style-only-white-color">
+								<option value="option1">All</option>
+								<option value="option2">admin</option>
+								<option value="option3">DART</option>
+								<option value="option4">UNIPUMP</option>
+								<option value="option4">PTS</option>
+								</select> 
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="column" style="width:2%">
+								<input type="radio" id="input-style-only" name="radio-option"/>
+							</div>
+
+							<div class="column" style="width:40%;text-align:left;margin-left:15px;">
+								<label > <br/> Pump nozzles summary report without totals</label>
+							</div>
+						</div>
+						<div class="row">
+
+							<div class="column" style="width:2%">
+								<input type="radio" id="input-style-only" name="radio-option"/>
+							</div>
+
+							<div class="column" style="width:55%;text-align:left;margin-left:15px;">
+								<label > <br/> Pump nozzles summary report with totals</label>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="column" style="width:20%">								
+							</div>
+
+							<div class="column" style="width:60%">
+								<input class="button" value="Generate report" style="text-align: center;width: 100%;height: 20px" />
+							</div>
+
+							<div class="column" style="width:20%">
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+
+				<div class="tab-content" id="tanks-reporting-div"> 
+					
+					<div id="sub-container-reporting-div">
+						
+						<div class="row">
+
+							<div class="column" style="width:10%">
+								
+								<input type="text" id="input-style-only" value="Tanks" />
+							
+							</div>
+
+							<div class="column" style="width:90%;height:34px">
+								<select name="dropdown" id="input-style-only-white-color">
+									<option value="option1">All</option>
+									<option value="option2">1</option>
+									<option value="option3">2</option>
+									<option value="option4">3</option>
+								</select> 
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="column" style="width:18%">
+								<input type="text" id="input-style-only" value="Date/Time start" />
+							</div>
+							<div class="column" style="width:80%">
+								<input type="text" id="input-style-only-white-color" />
+							</div>
+						</div>
+						<div class="row">
+
+							<div class="column" style="width:18%">
+								<input type="text" id="input-style-only" value="Date/Time end" />
+
+							</div>
+							<div class="column" style="width:80%">
+								<input type="text" id="input-style-only-white-color" />
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="column" style="width:15%">
+								<input type="text" id="input-style-only" value="Dirction" />
+
+							</div>
+							<div class="column" style="width:85%;height:34px">
+								<select name="dropdown" id="input-style-only-white-color">
+								<option value="option1">All</option>
+								<option value="option2">Increase</option>
+								<option value="option3">Decrease</option>
+								</select> 
+							</div>
+						</div>
+
+
+						<div class="row">
+
+							<div class="column" style="width:2%">
+								<input type="radio" id="input-style-only"/>
+							</div>
+
+							<div class="column" style="width:40%;text-align:left;margin-left:15px;">
+								<label > <br/>Generate tank reconciliation report</label>
+							</div>
+						</div>
+						<div class="row">
+
+							<div class="column" style="width:2%">
+								<input type="radio" id="input-style-only"/>
+							</div>
+
+							<div class="column" style="width:55%;text-align:left;margin-left:15px;">
+								<label > <br/> Generate tank measurements chart</label>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="column" style="width:20%">								
+							</div>
+
+							<div class="column" style="width:60%">
+								<input class="button" value="Generate report" style="text-align: center;width: 100%;height:20px" />
+							</div>
+
+							<div class="column" style="width:20%">
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div> 	
+		</div>
+
+		<div class="clear"></div>
+
+		<div id="footer">
+			<small>
+					&#169; Copyright 2020 Forecourt Automation | Powered by <a href="http://www.ashberry.uk">AshBeryy</a> | <a href="#">Top</a>
+			</small>
+		</div>
+	</div>
+
+{% endblock %}

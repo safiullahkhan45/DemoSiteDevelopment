@@ -1,0 +1,366 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+
+	<div id="sub-main-content-diagnostics">
+		
+		<div class="content-box">
+			
+			<div class="content-box-header">
+				<h3>Self diagnostic</h3>
+				<div class="clear"></div>
+			</div>
+
+			<div class="content-box-content">
+				
+				<div class="tab-content default-tab"> 
+				
+					<div id="sub-container-diagnostic-div">
+
+						<div class="row">
+
+							<div class="column" style="width:30%">								
+							</div>
+
+							<div class="column" style="width:40%">
+								<input class="button" value="Make self diagnostic" style="text-align: center;width: 100%;height: 20px" />
+							</div>
+
+							<div class="column" style="width:30%">
+							</div>
+						</div>
+
+						<br><br>
+
+						<div class="content-box">
+
+							<div class="content-box-header">
+								<h3>RS-485 PORTS</h3>
+								<div class="clear"></div>
+							</div>
+
+							<div class="content-box-content">
+
+								<div class="tab-content default-tab"> 
+
+									<div id="diagnostic-sub-container-1">
+
+										<span>For diagnostics of RS-485 ports:</span><br><br><br>
+										<span id="bullet-text"> short close lines A of each RS-485 ports with each other</span><br>
+										<span id="bullet-text"> short close lines B of each RS-485 ports with each other</span><br><br><br>
+
+
+										<div class="row">
+
+											<div class="column" style="width:50%">
+												<input class="text" value="Transmitting ports"   id="input-style-only"/>								
+											</div>
+
+											<div class="column" style="width:50%">
+												<input class="text" value="Receiving ports" id="input-style-only"  />
+											</div>
+										</div>
+
+										<div class="row">
+
+											<div class="column" style="width:50%">
+												<input class="text" value="Pump port 1"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="-" id="input-style-only-color-grey"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="2" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="3" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="4" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:30%">
+												<input class="text" value="DISP" id="input-style-only-color-pink"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:50%">
+												<input class="text" value="Pump port 2"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="1" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="-" id="input-style-only-color-grey"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="3" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="4" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:30%">
+												<input class="text" value="DISP" id="input-style-only-color-pink"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:50%">
+												<input class="text" value="Pump port 3"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="1" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="2" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="-" id="input-style-only-color-grey"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="4" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:30%">
+												<input class="text" value="DISP" id="input-style-only-color-pink"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:50%">
+												<input class="text" value="Pump port 4"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="1" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="2" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="3" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="-" id="input-style-only-color-grey"  />
+											</div>
+											<div class="column" style="width:30%">
+												<input class="text" value="DISP" id="input-style-only-color-pink"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:50%">
+												<input class="text" value="DISP"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="1" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="2" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="3" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:5%">
+												<input class="text" value="4" id="input-style-only-color-pink"  />
+											</div>
+											<div class="column" style="width:30%">
+												<input class="text" value="-" id="input-style-only-color-grey"  />
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="content-box">
+
+							<div class="content-box-header">
+								<h3>RS-232 PORTS</h3>
+								<div class="clear"></div>
+							</div>
+
+							<div class="content-box-content">
+
+								<div class="tab-content default-tab"> 
+
+									<div id="diagnostic-sub-container-2">
+
+										<span>For diagnostics of RS-232 ports short close lines Tx and Rx in each RS-232 port</span><br><br><br>
+
+
+										<div class="row">
+
+											<div class="column" style="width:60%">
+												<input class="text" value="Ports"   id="input-style-only"/>								
+											</div>
+
+											<div class="column" style="width:40%">
+												<input class="text" value="States" id="input-style-only"  />
+											</div>
+										</div>
+
+										<div class="row">
+
+											<div class="column" style="width:60%">
+												<input class="text" value="PC port"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:40%">
+												<input class="text" value="Error" id="input-style-only-color-pink"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:60%">
+												<input class="text" value="DISP port"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:40%">
+												<input class="text" value="Error" id="input-style-only-color-pink"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:60%">
+												<input class="text" value="USER port"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:40%">
+												<input class="text" value="Error" id="input-style-only-color-pink"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:60%">
+												<input class="text" value="LOG port"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:40%">
+												<input class="text" value="Error" id="input-style-only-color-pink"  />
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="content-box">
+
+							<div class="content-box-header">
+								<h3>DIP-SWITCHES</h3>
+								<div class="clear"></div>
+							</div>
+
+							<div class="content-box-content">
+
+								<div class="tab-content default-tab"> 
+
+									<div id="diagnostic-sub-container-3">
+
+										<div class="row">
+
+											<div class="column" style="width:70%">
+												<input class="text" value="DIP-switches"   id="input-style-only"/>								
+											</div>
+
+											<div class="column" style="width:30%">
+												<input class="text" value="States" id="input-style-only"  />
+											</div>
+										</div>
+
+										<div class="row">
+
+											<div class="column" style="width:70%">
+												<input class="text" value="DIP 1t"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:30%">
+												<input class="text" value="On" id="input-style-only-color-blue"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:70%">
+												<input class="text" value="DIP 2"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:30%">
+												<input class="text" value="Off" id="input-style-only-color-grey"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:70%">
+												<input class="text" value="DIP 3"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:30%">
+												<input class="text" value="Off" id="input-style-only-color-grey"  />
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="column" style="width:70%">
+												<input class="text" value="DIP 4"   id="input-style-only"/>								
+											</div>
+											<div class="column" style="width:30%">
+												<input class="text" value="Off" id="input-style-only-color-grey"  />
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="content-box">
+
+							<div class="content-box-header">
+								<h3>SD FLASH DISK</h3>
+								<div class="clear"></div>
+							</div>
+
+							<div class="content-box-content">
+
+								<div class="tab-content default-tab"> 
+
+									<div id="diagnostic-sub-container-4">
+
+										<div class="row">
+
+											<div class="column" style="width:60%">
+												<input class="text" value="State"   id="input-style-only"/>								
+											</div>
+
+											<div class="column" style="width:40%">
+												<input class="text" value="OK" id="input-style-only-color-green"  />
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+		<div id="footer">
+			<small>
+					&#169; Copyright 2020 Forecourt Automation | Powered by <a href="http://www.ashberry.uk">AshBeryy</a> | <a href="#">Top</a>
+			</small>
+		</div>
+
+	</div>
+
+{% endblock %}

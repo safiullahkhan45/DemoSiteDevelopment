@@ -1,0 +1,220 @@
+{% extends 'dashboard/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+	<style>
+		.form-header {
+			margin-top: 30px;
+		}
+	</style>
+
+	<div id="sub-main-site-registeration">
+
+		<div class="clear"></div> 
+
+		<div class="content-box">
+			
+			<div class="content-box-header">
+				<h3>Site Registeration</h3>
+			</div>
+
+			<div class="content-box-content">						
+				<div class="tab-content default-tab"> 
+					<div class="container-fluid">
+						<div class="company_form">
+
+							<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+						        <div class="">
+						        	<div class="">
+						        		<p>
+								            <label>RD No*</label>
+								            <input type="text" name="rd_number" class="text-input large-input">
+								        </p>
+						        	</div>
+
+						        	<!-- General Information -->
+
+						        	<div class="form-header">
+						        		<h3>General Information</h3>
+						        		<div class="">
+						        			<div class="column-left">
+						        				<p>
+										            <!-- <label>Company*</label>
+										            <select name="dropdown" class="large-input">
+										            	{% for choice in form.company %}
+															<option value="{{ choice }}"></option>
+														{% endfor %}
+													</select> -->
+													{{ form.company|as_crispy_field }}
+										        </p>
+										    </div>
+						        			<div class="column-right">
+						        				<p>
+										            <label>Site Name*</label>
+										            <input type="text" name="site_name" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="clear"></div>
+										    <div class="column-left">
+										        <p>
+										            <!-- <label>RD Status*</label>
+										            <select name="dropdown" class="large-input">
+										            	{% for choice in form.rd_status %}
+															<option value="{{ choice }}"></option>
+														{% endfor %}
+													</select> -->
+													{{ form.rd_status|as_crispy_field }}
+										        </p>
+										    </div>
+										    <div class="column-right">
+										        <p>
+										            <label>Supply Point*</label>
+										            <input type="text" name="supply_point" class="text-input large-input">
+										        </p>
+						        			</div>
+						        			<div class="clear"></div>
+						        		</div>
+						        	</div>
+
+						        	<!-- Contact and Address Details -->
+
+						        	<div class="form-header">
+						        		<h3>Contact and Address Details</h3>
+						        		<div class="">
+						        			<div class="column-left">
+						        				<p>
+										            <label>Dealer Name*</label>
+										            <input type="text" name="dealer_name" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="column-right">
+										        <p>
+										            <label>Dealer Contact</label>
+										            <input type="text" name="dealer_contact" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="clear"></div>
+										    <div class="column-left">
+										        <p>
+										            <label>Site Address*</label>
+										            <input type="text" name="site_address" class="text-input large-input">
+										        </p>
+						        			</div>
+										    <div class="column-right">
+										        <p>
+										            <label>District*</label>
+										            <input type="text" name="district" class="text-input large-input">
+										        </p>
+						        			</div>
+						        			<div class="clear"></div>
+										    <div class="column-left">
+										        <p>
+										            <label>Tehsil*</label>
+										            <input type="text" name="tehsil" class="text-input large-input">
+										        </p>
+						        			</div>
+						        			<div class="clear"></div>
+						        		</div>
+						        	</div>
+
+						        	<!-- Coordinates -->
+
+						        	<div class="form-header">
+						        		<h3>Coordinates</h3>
+						        		<div class="">
+						        			<div class="column-left">
+						        				<p>
+										            <label>Latitude*</label>
+										            <input type="number" name="latitude" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="column-right">
+										        <p>
+										            <label>Longitude*</label>
+										            <input type="number" name="longitude" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="clear"></div>
+						        		</div>
+						        	</div>
+
+						        	<!-- Area Information -->
+
+						        	<div class="form-header">
+						        		<h3>Area Information</h3>
+						        		<div class="">
+						        			<div class="column-left">
+						        				<p>
+										            <label>Zone*</label>
+										            <input type="text" name="zone" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="column-right">
+										        <p>
+										            <label>Region*</label>
+										            <input type="text" name="region" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="clear"></div>
+						        			<div class="column-left">
+						        				<p>
+										            <label>Zone Manager*</label>
+										            <input type="text" name="zone_manager" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="column-right">
+										        <p>
+										            <label>Region Manager*</label>
+										            <input type="text" name="region_manager" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="clear"></div>
+						        		</div>
+						        	</div>
+
+						        	<!-- Content Information -->
+
+						        	<div class="form-header">
+						        		<h3>Content Information</h3>
+						        		<div class="">
+						        			<div class="column-left">
+						        				<p>
+										            <label>Dispenser*</label>
+										            <input type="number" name="dispenser" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="column-right">
+										        <p>
+										            <label>Nozzels*</label>
+										            <input type="number" name="nozzels" class="text-input large-input">
+										        </p>
+										    </div>
+						        			<div class="column-left">
+						        				<p>
+										            <label>ATG*</label>
+										            <input type="checkbox" name="atg" class="text-input large-input">
+										        </p>
+										    </div>
+										    <div class="clear"></div>
+						        		</div>
+						        	</div>
+
+						        </div>
+						        <div class="form-group">
+						            <input type="submit" name="" class="button" value="Register Site">
+						        </div>
+						    </form>
+						    
+						</div>
+					</div>
+				</div> 
+			</div> 	
+		</div> 
+
+
+		<div class="clear"></div>
+		
+	</div>
+
+{% endblock %}

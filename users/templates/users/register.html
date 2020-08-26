@@ -1,0 +1,87 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+    <style>
+        
+        .align-center {
+            text-align: center;
+        }
+
+        .margin-b5 {
+            margin-bottom: 50px;
+        }
+
+    </style>
+
+    <form method="POST">
+        {% csrf_token %}
+                
+        <div class="notification information png_bg">
+            <div>
+                Register user here.
+            </div>
+        </div>
+        
+        <p>
+            <label>First Name*</label>
+            <input class="text-input" name="first_name" type="text" />
+        </p>
+        <div class="clear"></div>
+
+        <p>
+            <label>Last Name*</label>
+            <input class="text-input" name="last_name" type="text" />
+        </p>
+        <div class="clear"></div>
+        
+        <p>
+            <label>Username*</label>
+            <input class="text-input" name="username" type="text" />
+        </p>
+        <div class="clear"></div>
+        
+        <p>
+            <label>Mobile*</label>
+            <input class="text-input" name="mobile_number" type="text" />
+        </p>
+        <div class="clear"></div>
+        
+        <p>
+            <label>Email*</label>
+            <input class="text-input" name="email" type="email" />
+        </p>
+        <div class="clear"></div>
+        
+        <p>
+            <label>Password*</label>
+            <input class="text-input" name="password1" type="password" />
+        </p>
+        <div class="clear"></div>
+        
+        <p>
+            <label>Confirm Password*</label>
+            <input class="text-input" name="password2" type="password" />
+        </p>
+        <div class="clear"></div>
+
+        <p>
+            <label>Address*</label>
+            <input class="text-input" name="address" type="text" />
+        </p>
+        <div class="clear"></div>
+
+        <p>
+            <input class="button" type="submit" value="Sign Up" />
+        </p>
+        <div class="clear"></div>
+        <p class="margin-b5 align-center">
+            Already registered ? Sign In here.
+            <input class="button align-center" value="Sign In" />
+        </p>
+        
+    </form>
+
+{% endblock %}
