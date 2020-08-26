@@ -1,6 +1,7 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
 {% block content %}
+
 	
 	<noscript> <!-- Show a notification if the user has disabled javascript -->
 		<div class="notification error png_bg">
@@ -17,32 +18,32 @@
 	<ul class="shortcut-buttons-set"> <!-- Replace the icons URL's with your own -->
 		
 		<li><a class="shortcut-button" href="{% url 'company_registeration' %}"><span>
-			<img src="{% static "dashboard/resources/images/icons/path-to-icon.png" %}" alt="icon" /><br />
-			Create a company
+			<img src="{% static "dashboard/resources/images/icons/pencil.png" %}" alt="icon" /><br />
+			Create company
 		</span></a></li>
 		
 		<li><a class="shortcut-button" href="#"><span>
-			<img src="{% static "dashboard/resources/images/icons/path-to-icon.png" %}" alt="icon" /><br />
-			Edit a company
+			<img src="{% static "dashboard/resources/images/icons/pencil.png" %}" alt="icon" /><br />
+			Edit company
 		</span></a></li>
 
 		<li><a class="shortcut-button" href="{% url 'site_registeration' %}"><span>
-			<img src="{% static "dashboard/resources/images/icons/path-to-icon.png" %}" alt="icon" /><br />
-			Create a site
+			<img src="{% static "dashboard/resources/images/icons/pencil.png" %}" alt="icon" /><br />
+			Create site
 		</span></a></li>
 		
 		<li><a class="shortcut-button" href="#"><span>
-			<img src="{% static "dashboard/resources/images/icons/path-to-icon.png" alt="icon" %}" /><br />
-			Edit a site
+			<img src="{% static "dashboard/resources/images/icons/pencil.png" alt="icon" %}" /><br />
+			Edit site
 		</span></a></li>
 
 		<li><a class="shortcut-button" href="{% url 'add_product' %}"><span>
-			<img src="{% static "dashboard/resources/images/icons/path-to-icon.png" alt="icon" %}" /><br />
-			Add a product
+			<img src="{% static "dashboard/resources/images/icons/pencil.png" alt="icon" %}" /><br />
+			Add product
 		</span></a></li>
 		
 		<li><a class="shortcut-button" href="#messages" rel="modal"><span>
-			<img src="{% static "dashboard/resources/images/icons/path-to-icon.png" %}" alt="icon" /><br />
+			<img src="{% static "dashboard/resources/images/icons/pencil.png" %}" alt="icon" /><br />
 			Open Modal
 		</span></a></li>
 		
