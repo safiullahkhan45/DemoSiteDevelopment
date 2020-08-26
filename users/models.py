@@ -49,7 +49,7 @@ class Account(AbstractBaseUser):
     last_name               = models.CharField(max_length=100)
     mobile_number           = models.CharField(max_length=20)
     address                 = models.CharField(max_length=500)
-    
+
     USERNAME_FIELD = 'username'
     # REQUIRED_FIELDS = ['first_name', 'last_name', 'mobile_number', 'delivery_address']
     REQUIRED_FIELDS = ['email']
@@ -67,9 +67,3 @@ class Account(AbstractBaseUser):
     def has_module_perms(self, app_label):
         return True
 
-
-class Profile(models.Model):
-    account                 = models.OneToOneField(Account, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"{self.account.username}'s Profile"
