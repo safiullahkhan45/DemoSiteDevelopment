@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
@@ -45,7 +46,7 @@ def company_registeration(request):
 		if form.is_valid():
 			form.save()
 			messages.success(request, 'Company added successfuly !!')
-			return redirect('companies')
+			return redirect('home')
 
 		else:
 			messages.error(request, 'Form Error !!')
@@ -120,6 +121,38 @@ def company_products(request, id):
 	}
 	
 	return render(request, 'company/company_products.html', context)
+
+
+def delete_company(request, id):
+
+	obj = Company.objects.get(pk=id)
+	obj.delete()
+
+	return redirect('home')
+
+
+def edit_company(request, id):
+
+	if request.method == "GET":
+		obj = Company.objects.get(pk=id)
+		form = CompanyRegisterationForm(instance = obj)
+
+		context = {
+			'form': form
+		}
+
+		return render(request, 'company/edit_company.html', context)
+
+	else:
+		obj = Company.objects.get(pk=id)
+		form = CompanyRegisterationForm(request.POST, instance = obj)
+		if form.is_valid():
+			form.save()
+
+		return redirect('home')
+
+
+
 
 
 

@@ -1,0 +1,195 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+
+	<style>
+		.right {
+			float: right;
+			margin-right: 30px;
+			text-align: right;
+		}
+
+		.no-border {
+			border: none;
+			background-color: transparent !important;
+			padding: 6px;
+			font-size: 13px;
+		}
+		.no-border:focus {
+			padding: 6px;
+			font-size: 13px;
+			background-color: white !important;
+			color: #333;
+		}
+	</style>
+
+	<!-- Load icon library -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+	
+	<!-- Page Head -->
+	<div class="column-left">
+		{% if user.is_authenticated %}
+			<h2>Welcome {{ user.username|title }}</h2>
+		{% else %}
+			<h2>Welcome John</h2>
+		{% endif %}
+	</div>
+	<div class="column-right">
+		<div style="float: right;">
+			<form method="">
+				<fieldset>
+					<p>
+						<span class="fa fa-search"></span>
+						<input class="no-border" type="text" id="small-input" name="small-input" placeholder="Search. ." />
+					</p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+	<p id="page-intro">What would you like to do?</p>
+	
+	<ul class="shortcut-buttons-set"> <!-- Replace the icons URL's with your own -->
+		
+		<li><a class="shortcut-button" href="{% url 'company_registeration' %}"><span>
+			<img src="{% static "dashboard/resources/images/icons/hammer_screwdriver.png" %}" alt="icon" /><br />
+			Create company
+		</span></a></li>
+		
+		<li><a class="shortcut-button" href="#"><span>
+			<img src="{% static "dashboard/resources/images/icons/hammer_screwdriver.png" %}" alt="icon" /><br />
+			Edit company
+		</span></a></li>
+
+		<li><a class="shortcut-button" href="{% url 'site_registeration' %}"><span>
+			<img src="{% static "dashboard/resources/images/icons/hammer_screwdriver.png" %}" alt="icon" /><br />
+			Create site
+		</span></a></li>
+		
+		<li><a class="shortcut-button" href="#"><span>
+			<img src="{% static "dashboard/resources/images/icons/hammer_screwdriver.png" alt="icon" %}" /><br />
+			Edit site
+		</span></a></li>
+
+		<li><a class="shortcut-button" href="{% url 'add_product' %}"><span>
+			<img src="{% static "dashboard/resources/images/icons/hammer_screwdriver.png" alt="icon" %}" /><br />
+			Add product
+		</span></a></li>
+		
+	</ul><!-- End .shortcut-buttons-set -->
+	
+	<div class="clear"></div> <!-- End .clear -->
+	
+	<div class="content-box"><!-- Start Content Box -->
+		
+		<div class="content-box-header">
+			
+			<div class="column-left">
+				<h3>Companies</h3>
+			</div>
+			<!-- <div class="column-right">
+				<div class="right">
+					<form method="post">
+							
+						<fieldset>
+							<p>
+								<input class="text-input" type="text" id="small-input" name="small-input" placeholder="Search. ." />
+							</p>
+						</fieldset>
+					</form>
+				</div>
+			</div> -->
+
+			<div class="clear"></div>
+			
+		</div> <!-- End .content-box-header -->
+		
+		<div class="content-box-content">
+			
+			<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+				
+
+				<table>
+
+					<thead>
+						<tr>
+							<th>Sr. #</th>
+						   	<th>ID</th>
+						   	<th>Owner</th>
+						   	<th>Name</th>
+						   	<th>Type</th>
+						   	<th>Number</th>
+						   	<th>Email</th>
+						   	<th>Address</th>
+						   	<th>Choice</th>
+						</tr>
+						
+					</thead>
+
+					<tbody>
+						{% for object in obj %}
+						<tr>
+							<td>{{ forloop.counter0|add:obj.start_index }}</td>
+							<td>{{ object.id }}</td>
+                        	<td>{{ object.company_owner }}</td>
+                    		<td><a href="{% url 'sites' object.id %}">
+                    			{{ object.company_name }}</a>
+                    		</td>
+                        	<td>{{ object.business_type }}</td>
+                        	<td>{{ object.contact_number }}</td>
+                        	<td>{{ object.email }}</td>
+                        	<td>{{ object.address }}</td>
+                        	<td>
+								<!-- Icons -->
+								<a href="{% url 'edit_company' object.id %}" title="Edit"><img src="{% static "dashboard/resources/images/icons/hammer_screwdriver.png" %}" alt="Edit" /></a>
+								<a href="{% url 'delete_company' object.id %}" title="Delete"><img src="{% static "dashboard/resources/images/icons/cross.png" %}" alt="Delete" /></a>
+							</td>
+						</tr>
+						{% endfor %}
+						
+					</tbody>
+
+					<tfoot>
+						<tr>
+							<td colspan="6">
+								
+								{% if obj.has_other_pages %}
+								  	<div class="pagination">
+								    	{% if obj.has_previous %}
+								      		<a class="" href="?page={{ obj.previous_page_number }}">&laquo; Previous </a>
+								    	{% else %}
+								      		<span class="disabled">&laquo; Previous </span></li>
+								    	{% endif %}
+								    	{% for i in obj.paginator.page_range %}
+								      		{% if obj.number == i %}
+								        		<a href="#" class="number current">{{ i }}</a>
+								      		{% else %}
+								        		<a class="number" href="?page={{ i }}">{{ i }}</a>
+								      		{% endif %}
+								    	{% endfor %}
+								    	{% if obj.has_next %}
+								      		<a class="" href="?page={{ obj.next_page_number }}">Next &raquo;</a>
+								    	{% else %}
+								      		<span class="disabled">Next &raquo;</span>
+								    	{% endif %}
+								  	</div>
+								{% endif %} <!-- End .pagination -->
+								<div class="clear"></div>
+							</td>
+						</tr>
+					</tfoot>
+					
+				</table>
+				
+			</div> <!-- End #tab1 -->
+				
+			</div> <!-- End #tab2 -->        
+			
+		</div> <!-- End .content-box-content -->
+		
+	</div> <!-- End .content-box -->
+	
+	
+{% endblock %}

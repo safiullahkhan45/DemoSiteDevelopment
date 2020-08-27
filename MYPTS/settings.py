@@ -110,13 +110,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CRISPY_CLASS_CONVERTERS = {
-    # 'textinput': "text-input cst__radius",
-    # 'urlinput': "text-input cst__radius",
-    # 'numberinput': "text-input cst__radius",
-    # 'emailinput': "text-input cst__radius",
-    # 'dateinput': "text-input cst__radius",
-    # 'textarea': "text-input cst__radius",
-    # 'passwordinput': "text-input cst__radius",
+    'textinput': "text-input large-input cst__radius",
+    'urlinput': "text-input large-input cst__radius",
+    'numberinput': "text-input large-input cst__radius",
+    'emailinput': "text-input large-input cst__radius",
+    'dateinput': "text-input large-input cst__radius",
+    'textarea': "text-input large-input cst__radius",
+    'passwordinput': "text-input large-input cst__radius",
     'select': "text-input large-input cst__radius",
 }
 

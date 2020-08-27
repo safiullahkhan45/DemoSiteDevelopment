@@ -25,7 +25,8 @@ from users import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Dashboard Views
-    path('', dash_views.dashboard, name='dashboard'),
+    path('', dash_views.home, name='home'),
+    path('dashboard', dash_views.dashboard, name='dashboard'),
     path('sitemonitoring', dash_views.sitemonitoring, name='sitemonitoring'),
     path('pumps', dash_views.pumps, name='pumps'),
     path('tanks', dash_views.tanks, name='tanks'),
@@ -45,6 +46,8 @@ urlpatterns = [
     path('site_registeration', comp_views.site_registeration, name='site_registeration'),
     path('add_product', comp_views.add_product, name='add_product'),
     path('companies', comp_views.companies, name='companies'),
+    path('delete_company/<int:id>', comp_views.delete_company, name='delete_company'),
+    path('edit_company/<int:id>', comp_views.edit_company, name='edit_company'),
     path('sites/<int:id>/', comp_views.sites, name='sites'),
     path('company_products/<int:id>/', comp_views.company_products, name='company_products'),
 ]

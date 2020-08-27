@@ -1,7 +1,28 @@
 from django.shortcuts import render
-from company.models import Tank, Company_Product
+from django.core.paginator import Paginator
+from company.models import Tank, Company_Product, Company
 
 # Create your views here.
+
+def home(request):
+
+    obj = Company.objects.all()
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(obj, 5)
+    
+    try:
+        obj = paginator.page(page)
+    except PageNotAnInteger:
+        obj = paginator.page(1)
+    except EmptyPage:
+        obj = paginator.page(paginator.num_pages)
+
+    context = {
+		'obj': obj
+	}
+
+    return render(request, 'dashboard/home.html', context)
 
 def dashboard(request):
 
